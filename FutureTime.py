@@ -7,19 +7,21 @@
 import datetime
 
 def main():
-  #getting current time from system, storing to variable
+
   now = datetime.datetime.now()
-  currentHour = now.hour
+
+  currentHour = (now.hour + 6)
+
   currentMinute = now.minute
-
-  print (currentHour, currentMinute) #this is just for checking, we should delete it later
-
-  #TODO:
   #Ask user for hours
+
+  askhours = int(input("Enter the number of hours to add"))
+  
   #Ask user for minutes
-
+  askmins = int(input("Enter the number of minutes to add"))
   #Calculate the time after the user-supplied time has passed.
-
+  futuremins = (currentMinute + askmins) % 60
+  timefix = (currentMinute + askmins) // 60
   #Do not use any if statements in calculating the time.
 
   #Output the future time in standard format "HH:MM"
